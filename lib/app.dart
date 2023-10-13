@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_static_website/utils/theme.dart';
 
 import 'pages/pages.dart';
 
@@ -9,11 +10,11 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
+      debugShowCheckedModeBanner: false,
+      theme: AppTheme().appTheme(),
       home: const HomePage(),
     );
   }
+
+
 }
