@@ -3,9 +3,17 @@ import 'package:flutter_static_website/utils/constants.dart';
 import 'package:flutter_static_website/utils/size_config.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  final _scaffoldKey = GlobalKey<ScaffoldState>();
+
+  get itemCount => null;
   @override
   Widget build(BuildContext context) {
     return ScreenTypeLayout.builder(
@@ -17,31 +25,50 @@ class HomePage extends StatelessWidget {
 
   Widget _mobileLayout(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
-      body: SingleChildScrollView(
-        child: Container(
-          color: Colors.white,
-          padding: const EdgeInsets.symmetric(horizontal: 16.0),
-          width: MyMediaQuery.screenWidth(context),
-          height: MyMediaQuery.screenHeight(context) / 10,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              IconButton(
-                  onPressed: () {
-                    Scaffold.of(context).openDrawer();
-                  },
-                  icon: const Icon(Icons.menu)),
-              const SizedBox(
-                width: 80,
-                child: Image(
-                  image: AssetImage(logo),
-                  fit: BoxFit.contain,
-                ),
-              ),
-            ],
+      key: _scaffoldKey,
+      appBar: AppBar(
+        leading: DrawerButton(
+          onPressed: () => _scaffoldKey.currentState?.openDrawer(),
+        ),
+        title: const SizedBox(
+          width: 80,
+          child: Image(
+            image: AssetImage(logo),
+            fit: BoxFit.contain,
           ),
         ),
+      ),
+      
+      // drawer: Drawer(
+      //   child: Column(
+      //     children: [
+      //       Padding(
+      //         padding: const EdgeInsets.only(top: 10.0),
+      //         child: Row(
+      //           mainAxisAlignment: MainAxisAlignment.end,
+      //           children: [
+      //             IconButton(
+      //               onPressed: () => _scaffoldKey.currentState?.closeDrawer(),
+      //               icon: const Icon(Icons.close),
+      //             ),
+      //           ],
+      //         ),
+      //       ),
+      //       Expanded(
+      //         child: ListView.separated(
+      //           itemCount: 4,
+      //           separatorBuilder: (context, index) => const Divider(),
+      //           itemBuilder: (context, index) {
+      //             return ListTile();
+      //           },
+      //         ),
+      //       ),
+      //     ],
+      //   ),
+      // ),
+      body: Row(
+        children: [
+        ],
       ),
     );
   }
@@ -133,17 +160,20 @@ class HomePage extends StatelessWidget {
     );
   }
 
-  TextButton _navButton(
+  Widget _navButton(
     BuildContext context,
     Function()? onPressed,
     String buttonlabel,
     TextStyle? labelStyle,
   ) {
-    return TextButton(
-      onPressed: onPressed,
-      child: Text(
-        buttonlabel,
-        style: labelStyle,
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 8.0),
+      child: TextButton(
+        onPressed: onPressed,
+        child: Text(
+          buttonlabel,
+          style: labelStyle,
+        ),
       ),
     );
   }

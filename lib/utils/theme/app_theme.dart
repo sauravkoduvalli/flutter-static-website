@@ -8,6 +8,16 @@ class AppTheme {
       primaryColor: Colors.deepOrange,
       brightness: Brightness.light,
       textTheme: _appTextTheme(),
+      appBarTheme: _appbarTheme()
+    );
+  }
+
+  AppBarTheme _appbarTheme() {
+    return const AppBarTheme(
+      backgroundColor: Colors.white,
+      centerTitle: true,
+      foregroundColor: Colors.deepOrange,
+      iconTheme: IconThemeData(color: Colors.black)
     );
   }
 
