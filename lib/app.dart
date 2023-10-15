@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_static_website/utils/theme.dart';
+import 'package:flutter_static_website/utils/theme/app_theme.dart';
 
 import 'pages/pages.dart';
 
