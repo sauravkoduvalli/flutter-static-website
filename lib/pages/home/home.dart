@@ -38,34 +38,6 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
       ),
-      
-      // drawer: Drawer(
-      //   child: Column(
-      //     children: [
-      //       Padding(
-      //         padding: const EdgeInsets.only(top: 10.0),
-      //         child: Row(
-      //           mainAxisAlignment: MainAxisAlignment.end,
-      //           children: [
-      //             IconButton(
-      //               onPressed: () => _scaffoldKey.currentState?.closeDrawer(),
-      //               icon: const Icon(Icons.close),
-      //             ),
-      //           ],
-      //         ),
-      //       ),
-      //       Expanded(
-      //         child: ListView.separated(
-      //           itemCount: 4,
-      //           separatorBuilder: (context, index) => const Divider(),
-      //           itemBuilder: (context, index) {
-      //             return ListTile();
-      //           },
-      //         ),
-      //       ),
-      //     ],
-      //   ),
-      // ),
       body: Row(
         children: [
         ],
