@@ -17,8 +17,10 @@ class MobileLayout extends StatelessWidget {
           ),
         ),
       ),
-      body: Row(
-        children: [],
+      body: Column(
+        children: [
+          
+        ],
       ),
     );
   }

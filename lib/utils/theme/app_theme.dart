@@ -8,7 +8,8 @@ class AppTheme {
       primaryColor: Colors.deepOrange,
       brightness: Brightness.light,
       textTheme: _appTextTheme(),
-      appBarTheme: _appbarTheme()
+      appBarTheme: _appbarTheme(),
+      scaffoldBackgroundColor: Colors.grey.shade100
     );
   }
 
